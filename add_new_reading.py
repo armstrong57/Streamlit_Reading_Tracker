@@ -7,7 +7,7 @@ st.title("Daily Reading Data App")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 if 'reading_data' not in st.session_state:
-    reading_data = conn.read(worksheet='Reading Entries')
+    reading_data = conn.read(worksheet='ReadingEntries')
     st.session_state.reading_data = reading_data
 else:
     reading_data = st.session_state.reading_data

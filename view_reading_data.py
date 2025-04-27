@@ -14,7 +14,7 @@ start_date = pd.to_datetime(start_date)
 end_date = pd.to_datetime(end_date)
 
 conn = st.connection("gsheets", type=GSheetsConnection)
-reading_data = conn.read(worksheet='Reading Entries')
+reading_data = conn.read(worksheet='ReadingEntries')
 reading_data['date'] = pd.to_datetime(reading_data['date'])
 mask = (reading_data['date'] >= start_date) & (reading_data['date'] <= end_date)
 st.dataframe(reading_data.loc[mask], column_config={"date": st.column_config.DatetimeColumn(format="MMM D, YYYY")})

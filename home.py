@@ -6,7 +6,7 @@ def home_page():
     st.title("Daily Reading Data")
 
     conn = st.connection("gsheets", type=GSheetsConnection)
-    pages_by_date = conn.read(worksheet="Pages by Date")
+    pages_by_date = conn.read(worksheet="PagesbyDate")
     pages_by_date['date'] = pd.to_datetime(pages_by_date['date'])
     st.line_chart(pages_by_date, x="date", y="pages")
 
