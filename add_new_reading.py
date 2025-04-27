@@ -16,7 +16,7 @@ st.write("Add new entry:")
 
 new_date = st.date_input("Date")
 
-all_titles = reading_data['title'].to_list()
+all_titles = reading_data['title'].astype(str).to_list()
 all_titles = list(set(all_titles))
 all_titles.sort()
 all_titles.insert(0, 'New Title')
