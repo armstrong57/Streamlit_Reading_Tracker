@@ -34,3 +34,4 @@ if st.button("Add reading"):
     reading_data = pd.concat([reading_data, new_entry])
     reading_data = conn.update(data=reading_data)
     st.session_state.reading_data = reading_data
+    st.success("Reading entry submitted!")
