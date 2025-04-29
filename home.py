@@ -10,7 +10,6 @@ def home_page():
     pages_by_date['date'] = pd.to_datetime(pages_by_date['date'])
     st.line_chart(pages_by_date, x="date", y="pages")
 
-    st.header("Stats at a Glance")
 
-pg = st.navigation([home_page, "add_new_reading.py", "view_reading_data.py"])
+pg = st.navigation([home_page, "add_new_reading.py", "view_reading_data.py", "goal_progress.py"])
 pg.run()
