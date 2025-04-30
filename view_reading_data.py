@@ -32,10 +32,7 @@ page_count = int(sum(pages_col))
 st.write("Pages read: **{}**".format(page_count))
 
 # Number books read
-title_col = reading_data['title'].astype(str).to_list()
-unique_titles = list(set(title_col))
-title_count = len(unique_titles)
-st.write("Books read: **{}**".format(title_count))
+st.write("Books read: **{}**".format(reading_data['title'].nunique()))
 
 # Highest reading day
 pages_in_range = pages_in_range.set_index('date')
